@@ -88,7 +88,7 @@ const colors = [
     shininess: 0 },
   
   {
-    texture: 'seat_texture/5_5.jpg',
+    texture: 'seat_texture/5_1.jpg',
     size: [6, 6, 6],
     shininess: 0 },
   {
