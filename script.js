@@ -6,9 +6,9 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 var theModel;
 
 // const MODEL_PATH = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/chair.glb";
-const MODEL_PATH = "5 september seat cover .glb";
+const MODEL_PATH = "12sept.glb";
 
-var activeOption = 'Plane';
+var activeOption = 'main_seat';
 var loaded = false;
 
 const colors = [
@@ -192,17 +192,14 @@ const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10
 //   { childID: "seat_base_", mtl: INITIAL_MTL }];
 
 const INITIAL_MAP = [
-  { childID: "Plane", mtl: INITIAL_MTL },
-  { childID: "thread2", mtl: INITIAL_MTL },
-  { childID: "thread_1", mtl: INITIAL_MTL },
-  { childID: "threads_for_bottom_", mtl: INITIAL_MTL },
   { childID: "head_rest_", mtl: INITIAL_MTL },
   { childID: "head_rest_suppot", mtl: INITIAL_MTL },
-  { childID: "seat_front", mtl: INITIAL_MTL },
   { childID: "bottom_seat_", mtl: INITIAL_MTL },
   { childID: "right_side_pattern", mtl: INITIAL_MTL },
   { childID: "left_side_pattern", mtl: INITIAL_MTL },
-  { childID: "bottom_seat_suuport_", mtl: INITIAL_MTL }
+  { childID: "bottom_seat_suuport_", mtl: INITIAL_MTL },
+  { childID: "back_cover_", mtl: INITIAL_MTL },
+  { childID: "main_seat", mtl: INITIAL_MTL }
 ];
 
 
