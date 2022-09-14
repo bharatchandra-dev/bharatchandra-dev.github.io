@@ -14,130 +14,130 @@ var loaded = false;
 const colors = [
 {
   texture: 'seat_texture/1.jpg',
-  size: [2, 2, 2],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/2.jpg',
-  size: [4, 4, 4],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/3.jpg',
-  size: [8, 8, 8],
-  shininess: 10 },
+  size: [0, 0, 0],
+  shininess: 0 },
 {
   texture: 'seat_texture/4.jpg',
-  size: [3, 3, 3],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/5.jpg',
-  size: [6, 6, 6],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/6.jpg',
-  size: [2, 2, 2],
-  shininess: 0 },
+  size: [0, 0, 0],
+  shininess: 10 },
 {
   texture: 'seat_texture/7.jpg',
-  size: [4, 4, 4],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/8.jpg',
-  size: [8, 8, 8],
+  size: [0, 0, 0],
   shininess: 10 },
 {
   texture: 'seat_texture/9.jpg',
-  size: [3, 3, 3],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/10.jpg',
-  size: [6, 6, 6],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/11.jpg',
-  size: [2, 2, 2],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/12.jpg',
-  size: [4, 4, 4],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/13.jpg',
-  size: [8, 8, 8],
+  size: [0, 0, 0],
   shininess: 10 },
 {
   texture: 'seat_texture/14.jpg',
-  size: [3, 3, 3],
+  size: [0, 0, 0],
   shininess: 0 },
 {
   texture: 'seat_texture/1_1.jpg',
-  size: [6, 6, 6],
+  size: [0, 0, 0],
   shininess: 0 },
   {
     texture: 'seat_texture/2_1.jpg',
-    size: [4, 4, 4],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/3_1.jpg',
-    size: [8, 8, 8],
+    size: [0, 0, 0],
     shininess: 10 },
   
   {
     texture: 'seat_texture/4_1.jpg',
-    size: [3, 3, 3],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/5_1.jpg',
-    size: [6, 6, 6],
+    size: [0, 0, 0],
     shininess: 0 },
   {
     texture: 'seat_texture/6_1.jpg',
-    size: [2, 2, 2],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/7_1.jpg',
-    size: [4, 4, 4],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/8_1.jpg',
-    size: [8, 8, 8],
+    size: [0, 0, 0],
     shininess: 10 },
   
   {
     texture: 'seat_texture/9_1.jpg',
-    size: [3, 3, 3],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/10_1.jpg',
-    size: [6, 6, 6],
+    size: [0, 0, 0],
     shininess: 0 },
   {
     texture: 'seat_texture/11_1.jpg',
-    size: [2, 2, 2],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/12_1.jpg',
-    size: [4, 4, 4],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/13_1.jpg',
-    size: [8, 8, 8],
+    size: [0, 0, 0],
     shininess: 10 },
   
   {
     texture: 'seat_texture/14_1.jpg',
-    size: [3, 3, 3],
+    size: [0, 0, 0],
     shininess: 0 },
   
   {
     texture: 'seat_texture/15_1.jpg',
-    size: [6, 6, 6],
+    size: [0, 0, 0],
     shininess: 0 },
 
 // {
@@ -161,6 +161,7 @@ const canvas = document.querySelector('#c');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 
 renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setPixelRatio(window.devicePixelRatio);
 
 var cameraFar = 7;
@@ -256,12 +257,13 @@ hemiLight.position.set(0, 50, 0);
 // Add hemisphere light to scene   
 scene.add(hemiLight);
 
-var dirLight = new THREE.DirectionalLight(0xffffff, 0.54);
+var dirLight = new THREE.DirectionalLight(0xffffff, 0.40);
 dirLight.position.set(12, 20, 8);
 dirLight.castShadow = true;
 dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024);
 // Add directional Light to scene    
 scene.add(dirLight);
+
 
 // Floor
 var floorGeometry = new THREE.PlaneGeometry(5000, 5000, 1, 1);
